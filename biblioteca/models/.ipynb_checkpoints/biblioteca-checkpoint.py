@@ -16,11 +16,3 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-
-class biblioteca(models.Model):
-    _name = 'biblioteca.biblioteca'
-    _description = 'biblioteca.biblioteca'
-    name = fields.Char()
-    value = fields.Integer()
-    value2 = fields.Float(compute="_value_pc", store=True)
-    description = fields.Text()
