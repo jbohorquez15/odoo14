@@ -10,10 +10,10 @@
                         <h1><field name="name"/></h1>
                         <group>
                             <group>
-                                <filed name="active"/>
+                                <field name="active"/>
                             </group>
                             <group>
-                                <filed name="categoria"/>
+                                <field name="categoria"/>
                             </group>
                         </group>
                         <notebook>

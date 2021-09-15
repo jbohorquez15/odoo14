@@ -22,7 +22,7 @@ class libros(models.Model):
     _description = 'Libros Disponibles' 
     name = fields.Char(string ='Nombre', required=True)
     descripcion = fields.Text(string='Descripcion del Libro')
-    categoria = fields.Selection(string='Seleccione Categoria',
+    categoria = fields.Selection(string='Categoria',
                                 selection =[
                                     ('ciencias','Ciencias'),
                                     ('matematicas','Matematicas'),
