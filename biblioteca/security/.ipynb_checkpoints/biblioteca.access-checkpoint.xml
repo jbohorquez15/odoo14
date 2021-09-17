@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="res.groups" id="group_libros_admin">
+            <field name="name"> Biblioteca / Admin </field>
+        </record>
+        <record model="ir.rule" id="only_active_modify">
+            <field name="name">Only Active Modifi Books </field>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('active','=',True)]</field>
+            <field name="model_id" ref="model_biblioteca_libros"/>
+        </record>
+    </data>
+</odoo>

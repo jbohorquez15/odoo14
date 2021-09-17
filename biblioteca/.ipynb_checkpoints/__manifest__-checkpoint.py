@@ -33,6 +33,10 @@
         'views/views.xml',
         'views/templates.xml',
         'views/libros_views.xml',
+        'views/libros_menuitems.xml',
+        'security/biblioteca.access.xml',
+        'security/ir.model.access.csv',
+        'views/res_partner_view.xml',
     ],
     
 }

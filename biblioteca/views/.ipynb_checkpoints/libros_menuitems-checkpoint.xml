@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="libros_list_action">
+            <field name="name">Libros en Biblioteca</field>
+            <field name="res_model">biblioteca.libros</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crear tu Primer Libro 
+                </p>
+            </field>
+        </record>
+        <menuitem name="Blibioteca"
+                  id="menu_biblioteca"
+                  sequence="1"/>
+        <menuitem id="menu_biblioteca_sub" name="Libros" parent="menu_biblioteca" sequence="2"/>
+        <menuitem id="menu_bliblioteca_libros" name="Libros" parent="menu_biblioteca_sub" sequence="3"
+                  action="libros_list_action"/>
+    </data>
+</odoo>

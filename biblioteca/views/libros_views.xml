@@ -11,14 +11,25 @@
                         <group>
                             <group>
                                 <field name="active"/>
+                                <field name="categoria"/>
                             </group>
                             <group>
-                                <field name="categoria"/>
+                                <field name="precio_base"/>
+                                <field name="tarifa_adicional"/>
+                                <field name="precio_total" force_save="1"/>
                             </group>
                         </group>
                         <notebook>
                             <page string="Descripcion">
                                 <field name="descripcion"/>
+                            </page>
+                             <page string="Lectores">
+                                <field name="lectores_ids" nolabel="1" >
+                                    <tree string="Lectores">
+                                        <field name='name' />
+                                        <field name='street' />
+                                    </tree>
+                                 </field>
                             </page>
                         </notebook>
                     </sheet>
