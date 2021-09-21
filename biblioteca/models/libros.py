@@ -34,6 +34,7 @@ class libros(models.Model):
     precio_base = fields.Float (string="Precio Base", default=0.00)
     tarifa_adicional = fields.Float (string="Tarifa Adicional", default=10.00)
     precio_total = fields.Float (string="Total Precio", readonly=True)
+    image = fields.Binary (string="Foto del Libro")
     
     lectores_ids = fields.Many2many(
         comodel_name = 'res.partner',
@@ -42,6 +43,13 @@ class libros(models.Model):
         column2  ='partner_id',
         string   ='Lectores',
     )
+    
+    lecturas_id = fields.Many2one(comodel_name='biblioteca.libros_lecturas',
+                            inverse_name='libros_ids',
+                             string="Libros en Lectur",
+                              required=True
+                             )
+    
     
     @api.onchange('precio_base','tarifa_adicional')
     def _onchange_precio_total(self):
@@ -56,3 +64,4 @@ class libros(models.Model):
                  raise ValidationError('Tarifa Adicional no puede ser mayor que 10:%s' %record.tarifa_adicional)
                 
     
+

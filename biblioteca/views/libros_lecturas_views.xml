@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="libros_lecturas_views_form">
+            <field name="name">biblioteca.libros.lecturas.form</field>
+            <field name="model">biblioteca.libros_lecturas</field>
+            <field name="arch" type="xml">
+                <form string="Libros Form">
+                    <sheet>
+                        <h1><field name="name"/></h1>
+                        <notebook>
+                            <page string="Descripcion">
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form> 
+            </field>
+        </record>
+        <record model="ir.ui.view" id="libros_lectores_views_list">
+            <field name="name">biblioteca.libros.lectores.list</field>
+            <field name="model">biblioteca.libros_lecturas</field>
+            <field name="arch" type="xml">
+                <tree string="Lista de Libros en Lecturas">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+  </data>
+</odoo>

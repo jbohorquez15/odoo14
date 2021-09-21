@@ -37,6 +37,7 @@
         'security/biblioteca.access.xml',
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
+        'views/libros_lecturas_views.xml',
     ],
     
 }

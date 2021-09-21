@@ -4,18 +4,30 @@
         <record model="ir.actions.act_window" id="libros_list_action">
             <field name="name">Libros en Biblioteca</field>
             <field name="res_model">biblioteca.libros</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban,pivot</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                     Crear tu Primer Libro 
                 </p>
             </field>
         </record>
+        <record model="ir.actions.act_window" id="libros_lecturas_list_action">
+            <field name="name">Libros en Lecturas</field>
+            <field name="res_model">biblioteca.libros_lecturas</field>
+            <field name="view_mode">tree,form,kanban,pivot</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                   Concede tu primer Libro
+                </p>
+            </field>
+        </record>
         <menuitem name="Blibioteca"
                   id="menu_biblioteca"
                   sequence="1"/>
-        <menuitem id="menu_biblioteca_sub" name="Libros" parent="menu_biblioteca" sequence="2"/>
+        <menuitem id="menu_biblioteca_sub" name="Movimientos" parent="menu_biblioteca" sequence="2"/>
         <menuitem id="menu_bliblioteca_libros" name="Libros" parent="menu_biblioteca_sub" sequence="3"
                   action="libros_list_action"/>
+        <menuitem id="menu_bliblioteca_libros_lecturas" name="Libros en Lecturas" parent="menu_biblioteca_sub" 
+                  sequence="4" action="libros_lecturas_list_action"/>
     </data>
 </odoo>
