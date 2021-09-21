@@ -24,7 +24,7 @@
     
     # only loaded in demonstration mode
     'demo': [
-        'demo/biblioteca_demos.xml',
+        #'demo/biblioteca_demos.xml',
     ],
 
     # always loaded

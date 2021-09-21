@@ -2,8 +2,12 @@
 <odoo>
     <data>
         <record model="res.groups" id="group_libros_admin">
-            <field name="name"> Biblioteca / Admin </field>
+            <field name="name"> Biblioteca / Administrador </field>
         </record>
+        <record model="res.groups" id="group_libros_lecturas_admin">
+            <field name="name"> Lecturas / Admin </field>
+        </record>
+        
         <record model="ir.rule" id="only_active_modify">
             <field name="name">Only Active Modifi Books </field>
             <field name="perm_read" eval="0"/>
