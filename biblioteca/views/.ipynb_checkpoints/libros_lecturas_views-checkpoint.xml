@@ -5,11 +5,15 @@
             <field name="name">biblioteca.libros.lecturas.form</field>
             <field name="model">biblioteca.libros_lecturas</field>
             <field name="arch" type="xml">
-                <form string="Libros Form">
+                <form string="Libros en Lecturas Form">
                     <sheet>
                         <h1><field name="name"/></h1>
+                        <field name="partner_id"/>
                         <notebook>
-                            <page string="Descripcion">
+                            <page string="Libros">
+                                <field name="libros_ids" nolabel="1" >
+                                     <field name='name' />
+                                 </field>
                             </page>
                         </notebook>
                     </sheet>
