@@ -8,7 +8,7 @@
                 <form string="Libros en Lecturas Form">
                     <sheet>
                         <h1><field name="name"/></h1>
-                        <field name="partner_id"/>
+                        <field name="partner_id" string="Lector"/>
                         <notebook>
                             <page string="Libros">
                                 <field name="libros_ids" nolabel="1" >
