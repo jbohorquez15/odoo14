@@ -39,7 +39,7 @@ class SaleWizard(models.TransientModel):
         if lecturas_productos_id:
             for libros in self.libros_lecturas_ids:
                 order_id = self.env['sale.order'].create({
-                    'partner_id':lecturas_id.partner_id,
-                    'lectura_id':lecturas_id.id,
+                    'partner_id':self.lectores_facturas_ids,
+                    'lectura_id':self.lecturas_id,
                     'order_line':[(0,0,{'product_id':lecturas_productos_id.id,'price_unit':libros.total_precio})]
                 })
