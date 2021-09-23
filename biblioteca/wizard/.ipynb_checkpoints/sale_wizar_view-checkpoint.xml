@@ -8,8 +8,8 @@
                 <form string="Crear Facturas por Lecturas">
                     <group>
                         <field name="lecturas_id"/>
-                        <field name="lectores_lecturas_ids" invisible="1"/>    
-                        <field name="lectores_facturas_ids" domain="[('id','in',lectores_lecturas_ids)]"/> 
+                        <field name="libros_lecturas_ids" invisible="1"/>    
+                        <field name="libros_ids" domain="[('id','in',libros_lecturas_ids)]"/> 
                     </group>
                     <footer>
                         <button name="create_sale_order" type="object" string="Create" class="oe_highlight"/>
