@@ -66,6 +66,8 @@
         </record>
         
         
+        
+        
         <record model="ir.ui.view" id="libros_views_search">
             <field name="name">biblioteca.libros.serach</field>
             <field name="model">biblioteca.libros</field>

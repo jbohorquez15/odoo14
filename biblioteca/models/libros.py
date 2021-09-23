@@ -44,11 +44,14 @@ class libros(models.Model):
         string   ='Lectores',
     )
     
-    lecturas_id = fields.Many2one(comodel_name='biblioteca.libros_lecturas',
-                            inverse_name='libros_ids',
-                             string="Libros en Lectur",
-                              required=True
-                             )
+    
+    lecturas_ids = fields.Many2many(
+        comodel_name = 'biblioteca.libros_lecturas',
+        relation ='libros_lecturas_rel',
+        column1  ='libros_id',
+        column2  ='lecturas_id',
+        string   ='Libros en Lectura',
+    )
     
     
     @api.onchange('precio_base','tarifa_adicional')

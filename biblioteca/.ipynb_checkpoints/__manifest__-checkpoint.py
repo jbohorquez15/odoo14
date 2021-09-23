@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['sale'],
     
     # only loaded in demonstration mode
     'demo': [
@@ -38,6 +38,9 @@
         'security/ir.model.access.csv',
         'views/res_partner_view.xml',
         'views/libros_lecturas_views.xml',
+        'views/sales_order_view_inherit.xml',
+        'views/produc_lecturas_templanet_inherit.xml',
+        'wizard/sale_wizar_view.xml',
     ],
     
 }

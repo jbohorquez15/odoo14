@@ -8,7 +8,18 @@
                 <form string="Libros en Lecturas Form">
                     <sheet>
                         <h1><field name="name"/></h1>
-                        <field name="partner_id" string="Lector"/>
+                        <group>
+                            <field name="partner_id"  string="Lector Solicitante"/>
+                        </group>
+                        <group>
+                            <field name="fecha_inicio" string="Fecha de Prestamo" />
+                        </group>
+                        <group>
+                            <field name="fecha_fin" string="Fecha de Retorno" />
+                        </group>
+                        <group>
+                            <field name="duracion" string="Dias de Prestamo"/>
+                        </group>
                         <notebook>
                             <page string="Libros">
                                 <field name="libros_ids" nolabel="1" >
@@ -27,6 +38,21 @@
                 <tree string="Lista de Libros en Lecturas">
                     <field name="name"/>
                 </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="libros_lecturas_views_calendar">
+            <field name="name">biblioteca.libros_lecturas.calendar</field>
+            <field name="model">biblioteca.libros_lecturas</field>
+            <field name="arch" type="xml">
+                <calendar string="Lista de Libros en Lectura"
+                    date_start="fecha_inicio"
+                    date_stop="fecha_fin"
+                    color="partner_id"
+                    mode="month">
+                 <field name="name"/>
+                 <field name="partner_id"/>
+                </calendar>
             </field>
         </record>
         

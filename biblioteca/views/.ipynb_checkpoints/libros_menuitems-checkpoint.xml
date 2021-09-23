@@ -14,7 +14,7 @@
         <record model="ir.actions.act_window" id="libros_lecturas_list_action">
             <field name="name">Libros en Lecturas</field>
             <field name="res_model">biblioteca.libros_lecturas</field>
-            <field name="view_mode">tree,form,kanban,pivot</field>
+            <field name="view_mode">tree,form,kanban,pivot,calendar</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
                    Concede tu primer Libro
