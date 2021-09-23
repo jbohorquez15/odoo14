@@ -25,7 +25,7 @@ class SaleWizard(models.TransientModel):
     )
     
     
-    lectores_facturas_ids = fields.Many2many(
+    lectores_facturas_ids = fields.One2many(
         comodel_name = 'res.partner',
         string   ='Lectores para la Factura',
         related  ='lecturas_id.partner_id',
