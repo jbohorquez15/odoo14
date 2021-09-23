@@ -7,6 +7,9 @@
             <field name="arch" type="xml">
                 <form string="Crear Facturas por Lecturas">
                     <group>
+                        <field name="lectores_facturas_ids"/>
+                    </group>
+                    <group>
                         <field name="lecturas_id"/>
                         <field name="libros_lecturas_ids" invisible="1"/>    
                         <field name="libros_ids" domain="[('id','in',libros_lecturas_ids)]"/> 
@@ -23,7 +26,7 @@
         </record>
         
         <record id="launch_sale_order" model="ir.actions.act_window">
-            <field name="name">Create Sale Order</field>
+            <field name="name">Crear Facturas</field>
             <field name="res_model">biblioteca.wizard</field>
             <field name="view_mode">form</field>
             <field name="target">new</field>
