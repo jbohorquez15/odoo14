@@ -8,7 +8,7 @@ class SaleWizard(models.TransientModel):
     lecturas_id = fields.Many2one(
         comodel_name = 'biblioteca.libros_lecturas',
         string   ='Libros Prestados',
-        requiered = True,
+        required = True,
         default = _default_lecturas )
     
     lectores_lecturas_ids = fields.Many2many(
