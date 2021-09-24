@@ -24,20 +24,9 @@ class SaleWizard(models.TransientModel):
         string   ='Libros Disponibles'
     )
     
-    
- #   lectores_facturas_ids = fields.One2many(
- #       comodel_name = 'res.partner',
-#      string   ='Lectores para la Factura',
-#        related  ='lecturas_id.partner_id',
- #   )
-    
-    
-     lectores_facturas_ids=fields.Many2one(related='lecturas_id.partner_id',
+    lectores_facturas_ids=fields.Many2one(related='lecturas_id.partner_id',
                                string='Lector',
                                ondelete='set null')
-    
-    
-    
     
     def create_sale_order(self):
         lecturas_productos_id = self.env['product.product'].search([('is_lectura_product','=',True)], limit=1)
