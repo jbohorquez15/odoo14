@@ -15,10 +15,9 @@
                         <field name="libros_ids" domain="[('id','in',libros_lecturas_ids)]"/> 
                     </group>
                     <footer>
-                        <button name="create_sale_order" type="object" string="Create" class="oe_highlight"/>
+                        <button name="create_sale_order" type="object" string="Crear" class="oe_highlight"/>
                         or 
-                        <button special="cancel" string="Cancel"/>
-                            
+                        <button special="cancel" string="Cancelar"/>  
                     </footer>
                 </form>
                     
