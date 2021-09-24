@@ -29,8 +29,6 @@ class SaleWizard(models.TransientModel):
                                ondelete='set null')
     
     def create_sale_order(self):
-        lector_id=self.env['res.partner'].search([('partner_id','=',lecturas_id.partner_id)], limit=1) 
-        lecturas_productos_id = self.env['product.product'].search([('is_lectura_product','=',True)], limit=1)
         if lecturas_productos_id:
             
             for libros in self.libros_lecturas_ids:
