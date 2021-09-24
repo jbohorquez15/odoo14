@@ -29,12 +29,15 @@ class SaleWizard(models.TransientModel):
                                ondelete='set null')
     
     def create_sale_order(self):
+        lector_id=self.lectores_facturas_ids
+        lecturas_id=self.lecturas_id
         lecturas_productos_id = self.env['product.product'].search([('is_lectura_product','=',True)], limit=1)
         if lecturas_productos_id:
+            
             for libros in self.libros_lecturas_ids:
                 order_id = self.env['sale.order'].create({
-                    'partner_id':self.lectores_facturas_ids,
-                    'lecturas_id':self.lecturas_id,
-                    'lector_id':self.lectores_facturas_ids,
+                    'partner_id':lector_id,
+                    'lecturas_id':lecturas_id,
+                    'lector_id':lector_id,
                     'order_line':[(0,0,{'product_id':lecturas_productos_id.id,'price_unit':libros.precio_total})]
                 })
