@@ -5,9 +5,9 @@ class LecturasReport(models.AbstractModel):
     _name = 'report.bibioteca.report_lecturas_document'
 
     def _get_report_values(self, docids, data=None):
-        report = self.env['ir.actions.report']._get_report_from_name('odoo_academy.report_session_document')
+        report = self.env['ir.actions.report']._get_report_from_name('biblioteca.report_lecturas_document')
         docs = self.env[report.model].browse(docids)
-        products = self.env['product.template'].search([('is_session_product', '=', True)])
+        products = self.env['product.template'].search([('is_lectura_product', '=', True)])
         return {
             'doc_ids': docids,
             'doc_model': report.model,
