@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <report
+            id="report_lecturas"
+            model="biblioteca.libros_lecturas"
+            string="Prestamos Report"
+            name="biblioteca.report_lecturas_document"
+            file="biblioteca.report_lecturas"
+            report_type="qweb-html"/>
+        
+        <template id="report_lecturas_document">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2 t-field="doc.name" class="mt16"/>
+                            <div class="row mt32 mb32" id="session_info">
+                                <div class="col-auto mw-100 mb-2">
+                                    <strong>Tiempo de Prestamos:</strong>
+                                    <t t-if="doc.fecha_inicio">
+                                        <span t-field="doc.fecha_inicio"/>
+                                    </t>
+                                    to
+                                    <t t-if="doc.fecha_fin">
+                                        <span t-field="doc.fecha_fin"/>
+                                    </t>
+                                </div>
+
+                                <div t-if="doc.partner_id" class="col-auto mw-100 mb-2">
+                                    <strong>Leector:</strong>
+                                    <span t-field="doc.instructor_id.name"/>
+                                </div>
+                            </div>
+                            <h4>Libros</h4>
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th name="th_name">Name</th>
+                                        <th name="th_categoria">Categoria</th>
+                                        <th name="th_descripcion">Descripcion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="doc.libros_ids" t-as="libros">
+                                        <tr>
+                                            <!-- Typo in Video Exercise: moving t-if out of the <td> tag -->
+                                            <!-- Reason: if the t-if is in the <td> tag, then if False, will shift columns -->
+                                            <td name="td_name">
+                                                <t t-if="libros.name">
+                                                    <span t-field="libros.name"/>
+                                                </t>
+                                            </td>
+                                            <td name="td_categoria">
+                                                <t t-if="libros.categoria">
+                                                    <span t-field="libros.categoria"/>
+                                                </t>
+                                            </td>
+                                            <td name="td_descripcion">
+                                                <t t-if="libros.descripcion">
+                                                    <span t-field="libros.descripcion"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <h4>Producto Facturados</h4>
+                            <table class="table table-sm o_main_table">
+                                <thead>
+                                    <tr>
+                                        <th name="th_product">Name</th>
+                                        <th name="th_price">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="products" t-as="product">
+                                        <tr>
+                                            <td name="td_name">
+                                                <t t-if="product.name">
+                                                    <span t-field="product.name"/>
+                                                </t>
+                                            </td>
+                                            <td name="td_list_price">
+                                                <t t-if="product.list_price">
+                                                    <span t-field="product.list_price"/>
+                                                </t>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>             
+    </data>
+</odoo>

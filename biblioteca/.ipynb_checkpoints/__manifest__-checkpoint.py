@@ -41,6 +41,7 @@
         'views/sales_order_view_inherit.xml',
         'views/produc_lecturas_templanet_inherit.xml',
         'wizard/sale_wizar_view.xml',
+        'report/prestamos_report_template.xml',
     ],
     
 }
