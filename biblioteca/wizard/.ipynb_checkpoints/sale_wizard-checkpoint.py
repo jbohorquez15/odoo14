@@ -25,11 +25,16 @@ class SaleWizard(models.TransientModel):
     )
     
     
-    lectores_facturas_ids = fields.One2many(
-        comodel_name = 'res.partner',
-        string   ='Lectores para la Factura',
-        related  ='lecturas_id.partner_id',
-    )
+ #   lectores_facturas_ids = fields.One2many(
+ #       comodel_name = 'res.partner',
+#      string   ='Lectores para la Factura',
+#        related  ='lecturas_id.partner_id',
+ #   )
+    
+    
+     lectores_facturas_ids=fields.Many2one(related='lecturas_id.partner_id',
+                               string='Lector',
+                               ondelete='set null')
     
     
     
@@ -40,6 +45,7 @@ class SaleWizard(models.TransientModel):
             for libros in self.libros_lecturas_ids:
                 order_id = self.env['sale.order'].create({
                     'partner_id':self.lectores_facturas_ids,
-                    'lectura_id':self.lecturas_id,
+                    'lecturas_id':self.lecturas_id,
+                    'lector_id':self.lectores_facturas_ids,
                     'order_line':[(0,0,{'product_id':lecturas_productos_id.id,'price_unit':libros.precio_total})]
                 })
