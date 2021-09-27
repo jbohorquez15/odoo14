@@ -9,13 +9,13 @@ class Biblioteca(http.Controller):
         return "Hello, world"
 
     @http.route('/biblioteca/libros/', auth='public', website=True)
-    def list(self, **kw):
+    def libros(self, **kw):
         libros = http.request.env['biblioteca.libros'].search([])
         return http.request.render('biblioteca.libros_website', {
              'libros': libros,
          })
     @http.route('/biblioteca/<model("biblioteca.libros_lecturas"):lecturas>/', auth='public')
-    def list(self,lecturas):
+    def lecturas(self,lecturas):
          return http.request.render('biblioteca.lecturas_website', {
              'lecturas': lecturas,
          })
