@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="libros_website">
+            <t t-call="website.layout">
+                <t t-set="title"> Biblioteca </t>
+                <div class="container">
+                    <t t-foreach="libros" t-as="libro">
+                        <h3>
+                            <t t-esc="libro.name"/>
+                        </h3>
+                        <p> Descripcion :
+                            <span t-field="libro.descripcion"/>
+                        </p>
+                        <p> Categoria :
+                            <span t-field="libro.categoria"/>
+                        </p>
+                        <strong>Prestamos</strong>
+                        <t t-foreach="libros.lecturas_ids" t-as="lecturas">
+                            <p>
+                                <a t-attf-href="/biblioteca/{{ slug(lecturas) }}">
+                                    <t t-esc="lecturas.name"/>
+                                </a>
+                            </p>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+        <template id="lecturas_website">
+            <t t-call="website.layout">
+                <t t-set="title"> Lecturas </t>
+                    <div class="oe_structure">
+                        <h3 t-field="lecturas.name" />
+                        <p> Fecha de Prestamos :
+                            <i t-field="lecturas.fecha_inicio"  t-field-options='{"format":"long"}'/>
+                        </p>
+                    </div>
+            </t>
+        </template>
+  </data>
+</odoo>

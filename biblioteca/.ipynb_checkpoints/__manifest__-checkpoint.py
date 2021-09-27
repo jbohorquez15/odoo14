@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['sale'],
+    'depends': ['sale','website'],
     
     # only loaded in demonstration mode
     'demo': [
@@ -42,6 +42,7 @@
         'views/produc_lecturas_templanet_inherit.xml',
         'wizard/sale_wizar_view.xml',
         'report/prestamos_report_template.xml',
+        'views/biblioteca_website_template.xml',
     ],
     
 }
