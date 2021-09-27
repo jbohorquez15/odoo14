@@ -14,7 +14,7 @@ class Biblioteca(http.Controller):
         return http.request.render('biblioteca.libros_website', {
              'libros': libros,
          })
-    @http.route('/biblioteca/<model("biblioteca.libros_lecturas"):lecturas>/', auth='public')
+    @http.route('/biblioteca/<model("biblioteca.libros_lecturas"):lecturas>/', auth='public', website=True)
     def lecturas(self,lecturas):
          return http.request.render('biblioteca.lecturas_website', {
              'lecturas': lecturas,
